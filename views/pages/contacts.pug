@@ -1,71 +1,41 @@
-doctype html
-head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    meta(name='author' content='Ukrainets Vasya')
-    meta(name='description' content='Simple website page of WebUI Task #1')
-    meta(http-equiv='content-language' content='en')
-    meta(http-equiv='cache-control' content='no-cache')
-    title Web Task 1 | Contacts
-    link(type='image/x-icon' rel='shortcut icon' href='../../assets/icons/favicon.ico')
-    link(rel='stylesheet' href='../../css/index.css')
-body
-    header.top-header
-        .logo
-            a(href='../index.html')
-        nav.top-navigation
-            ul.categories-list
-                li.category-item
-                    a(href='../index.html') main
-                li.category-item
-                    span.subcategory-item
-                        a(href='matches.html') matches
-                    ul.categories-list.subcategories-list
-                        li.category-item.subcategory-item
-                            a(href='matches.html#matches-callendar-container') callendar of matches
-                        li.category-item.subcategory-item
-                            a(href='matches.html#next-match-container') next game
-                        li.category-item.subcategory-item
-                            a(href='matches.html#raitings-container') raitings
-                li.category-item
-                    a(href='news.html') news
-                li.category-item
-                    a(href='fans.html') fans
-                li.category-item.current
-                    a(href='') contacts
-                li.category-item
-                    a(href='admin.html') admin
-    main.content
-        article.contacts
+extends layout/default
+
+block vars
+    -
+        page = {
+            language: 'en',
+            title: 'Web Task 1 | Contacts',
+            author: 'Ukrainets Vasya',
+            description: 'Simple website page of WebUI Task #1'
+        }
+
+block content
+    article.contacts
+        header
+            h2.title About us
+        section
             header
-                h2.title About us
-            section
-                header
-                    h3.title Contacts
-                address
-                    p
-                        | email: 
-                        a(href='mailto:someone@mysite.com') someone@mysite.com
-                    p
-                        | tel 1: 
-                        a(href='tel:1-562-867-5309') 1-562-867-5309
-                    p
-                        | tel 2: 
-                        a(href='tel:1-323-234-6543') 1-323-234-6543
-                    p
-                        | local address: 
-                        a(href='https://www.google.com/maps/place/Metro+Club/@49.8258791,24.049791,15.25z/data=!4m5!3m4!1s0x473add42a98fa1c5:0xc2357933e49b3c1a!8m2!3d49.8333089!4d24.0376943' target='_blank') 8602 North Road Lynnwood, WA 98037
-                .socials
-                    p Follow us
-                    nav.socials-navbar
-                        a.twitter(href='https:twitter.com')
-                        a.facebook(href='https:facebook.com')
-                        a.instagram(href='https:instagram.com')
-                        a.youtube(href='https:youtube.com')
-            aside
-                .map
-                    iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8657.473281129336!2d24.04979095346674!3d49.825879092754256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add42a98fa1c5%3A0xc2357933e49b3c1a!2sMetro%20Club!5e0!3m2!1sru!2sua!4v1626284987556!5m2!1sru!2sua' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy')
-    footer.bottom-footer
-        p.copyright
-            small &copy; Copyright 2021 Wasya1212.
+                h3.title Contacts
+            address
+                p
+                    | email: 
+                    a(href='mailto:someone@mysite.com') someone@mysite.com
+                p
+                    | tel 1: 
+                    a(href='tel:1-562-867-5309') 1-562-867-5309
+                p
+                    | tel 2: 
+                    a(href='tel:1-323-234-6543') 1-323-234-6543
+                p
+                    | local address: 
+                    a(href='https://www.google.com/maps/place/Metro+Club/@49.8258791,24.049791,15.25z/data=!4m5!3m4!1s0x473add42a98fa1c5:0xc2357933e49b3c1a!8m2!3d49.8333089!4d24.0376943' target='_blank') 8602 North Road Lynnwood, WA 98037
+            .socials
+                p Follow us
+                nav.socials-navbar
+                    a.twitter(href='https:twitter.com')
+                    a.facebook(href='https:facebook.com')
+                    a.instagram(href='https:instagram.com')
+                    a.youtube(href='https:youtube.com')
+        aside
+            .map
+                iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8657.473281129336!2d24.04979095346674!3d49.825879092754256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add42a98fa1c5%3A0xc2357933e49b3c1a!2sMetro%20Club!5e0!3m2!1sru!2sua!4v1626284987556!5m2!1sru!2sua' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy')
