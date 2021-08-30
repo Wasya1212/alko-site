@@ -1,0 +1,24 @@
+#navbarsExample05.top-navigation.navbar-collapse.collapse
+    ul.categories-list.d-flex.flex-column.flex-md-row.navbar-nav.me-auto
+        li.category-item.current
+            a(href='/') main
+        li.category-item.dropdown
+            span.subcategory-item
+                a(href='/matches') matches
+            ul.categories-list.subcategories-list
+                li.category-item.subcategory-item
+                    a(href='/matches#matches-callendar-container')
+                        | callendar of
+                        | matches
+                li.category-item.subcategory-item
+                    a(href='/matches#next-match-container') next game
+                li.category-item.subcategory-item
+                    a(href='/matches#raitings-container') raitings
+        li.category-item
+            a(href='/news') news
+        li.category-item
+            a(href='/fans') fans
+        li.category-item
+            a(href='/contacts') contacts
+        li.category-item
+            a(href='/admin') admin

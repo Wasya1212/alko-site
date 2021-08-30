@@ -1,231 +1,189 @@
-doctype html
-head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    meta(name='author' content='Ukrainets Vasya')
-    meta(name='description' content='Simple website page of WebUI Task #1')
-    meta(http-equiv='content-language' content='en')
-    meta(http-equiv='cache-control' content='no-cache')
-    title Web Task 1
-    link(type='image/x-icon' rel='shortcut icon' href='../assets/icons/favicon.ico')
-    link(rel='stylesheet' href='../libs/normalizecss/normalize.css')
-    link(rel='stylesheet' href='../libs/fontawesome-free-5.15.3-web/css/all.min.css')
-    link(rel='stylesheet' href='../libs/bootstrap-5.0.2-dist/css/bootstrap.min.css')
-    link(rel='stylesheet' href='../libs/bootstrap-icons-1.5.0/bootstrap-icons.css')
-    link(rel='stylesheet' href='../css/index.css')
-body
-    header.top-header.container-fluid.p-0
-        nav.navbar.navbar-expand-md.p-0(aria-label='Fifth navbar example')
-            .container-fluid.d-flex.flex-row-reverse.justify-content-between.align-items-center
-                .logo
-                    a(href='')
-                button.navbar-toggler.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#navbarsExample05' aria-controls='navbarsExample05' aria-expanded='false' aria-label='Toggle navigation')
-                    span.navbar-toggler-icon
-                        i.bi.bi-list
-                #navbarsExample05.top-navigation.navbar-collapse.collapse
-                    ul.categories-list.d-flex.flex-column.flex-md-row.navbar-nav.me-auto
-                        li.category-item.current
-                            a(href='') main
-                        li.category-item.dropdown
-                            span.subcategory-item
-                                a(href='html/pages/matches.html') matches
-                            ul.categories-list.subcategories-list
-                                li.category-item.subcategory-item
-                                    a(href='html/pages/matches.html#matches-callendar-container')
-                                        | callendar of
-                                        | matches
-                                li.category-item.subcategory-item
-                                    a(href='html/pages/matches.html#next-match-container') next game
-                                li.category-item.subcategory-item
-                                    a(href='html/pages/matches.html#raitings-container') raitings
-                        li.category-item
-                            a(href='html/pages/news.html') news
-                        li.category-item
-                            a(href='html/pages/fans.html') fans
-                        li.category-item
-                            a(href='html/pages/contacts.html') contacts
-                        li.category-item
-                            a(href='html/pages/admin.html') admin
-    main.content
-        article.intro.container-fluid.p-0
-            #carouselExampleCaptions.carousel.slide(data-bs-ride='carousel')
-                .carousel-indicators
-                    button.active(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-                    button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide 2')
-                    button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' aria-label='Slide 3')
-                    button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='3' aria-label='Slide 4')
-                .carousel-inner.slides.slider
-                    .carousel-item.slide.active
-                        img.d-block.w-100(src='../assets/img/slider/bodybuilder-training-glasses-muscles-back-tattoos.jpg' alt='...')
-                        .carousel-caption.d-none.d-md-block.text-start
-                            h3.title.text-start Training like Rock
-                            p
-                                | Program creative in California cardio, 
-                                br
-                                | running cross-fit, boxing
-                    .carousel-item.slide
-                        img.d-block.w-100(src='../assets/img/slider/powerlifting-gym-fitness.jpg' alt='...')
-                        .carousel-caption.d-none.d-md-block.text-start
-                            h3.title.text-start Training like Rock
-                            p
-                                | Program creative in California cardio, 
-                                br
-                                | running cross-fit, boxing
-                    .carousel-item.slide
-                        img.d-block.w-100(src='../assets/img/slider/sport-body-building-shtanga-myshcy-sport-1430245.jpg' alt='...')
-                        .carousel-caption.d-none.d-md-block.text-start
-                            h3.title.text-start Training like Rock
-                            p
-                                | Program creative in California cardio, 
-                                br
-                                | running cross-fit, boxing
-                    .carousel-item.slide
-                        img.d-block.w-100(src='../assets/img/slider/vitamonk-advertorial-header.jpg' alt='...')
-                        .carousel-caption.d-none.d-md-block.text-start
-                            h3.title.text-start Training like Rock
-                            p
-                                | Program creative in California cardio, 
-                                br
-                                | running cross-fit, boxing
-                button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.visually-hidden Previous
-                button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.visually-hidden Next
-        article.history.container-fluid
-            header.mb-5.mb-mg-0
-                h2.title.mb-3.mb-mg-0 The Fascinating Untold History Of Powerlifting
-                p.article-description
-                    i
-                        | Learn more about the historic roots of powerlifting&apos;s explosive
-                        | growth.
-                footer.article-author
-                    address
+extends layout/default
+
+block vars
+    -
+        page = {
+            language: 'en',
+            title: 'Web Task 1',
+            author: 'Ukrainets Vasya',
+            description: 'Simple website page of WebUI Task #1'
+        }
+
+block content
+    article.intro.container-fluid.p-0
+        #carouselExampleCaptions.carousel.slide(data-bs-ride='carousel')
+            .carousel-indicators
+                button.active(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide 2')
+                button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' aria-label='Slide 3')
+                button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='3' aria-label='Slide 4')
+            .carousel-inner.slides.slider
+                .carousel-item.slide.active
+                    img.d-block.w-100(src='../assets/img/slider/bodybuilder-training-glasses-muscles-back-tattoos.jpg' alt='...')
+                    .carousel-caption.d-none.d-md-block.text-start
+                        h3.title.text-start Training like Rock
                         p
-                            | Written by 
-                            a(href='https://barbend.com/author/conor-heffernan/') Conor Heffernan
+                            | Program creative in California cardio, 
+                            br
+                            | running cross-fit, boxing
+                .carousel-item.slide
+                    img.d-block.w-100(src='../assets/img/slider/powerlifting-gym-fitness.jpg' alt='...')
+                    .carousel-caption.d-none.d-md-block.text-start
+                        h3.title.text-start Training like Rock
                         p
-                            | Original text from 
-                            cite
-                                a(href='https://barbend.com/powerlifting-history/') barbend.com
-            section
-                h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 The First Competitions and Organizations
-                p
-                    dfn Weightlifting
-                    |  welcomed its first world championship in 1891. The sport&rsquo;s prestige was
-                    |                     heightened some years later when it was featured at the inaugural 1896 Olympic Games in Athens (3).
-                    |                     Powerlifting, on the other hand, had no such competition. 
-                    strong
-                        | Indeed, powerlifting as we
-                        | understand it today, was virtually inseparable from weightlifting for the first half of the
-                        | twentieth-century.
-                    |  This was especially the case with two of the largest weightlifting
-                    |                     organizations which emerged during this period.
-                p
-                    | While mainland Europe boasted a series of weightlifting organizations in the early twentieth century,
-                    b
-                        | weightlifting, and by proxy powerlifting, tended to flourish in Great Britain and the United
-                        | States
-                    | . After several failed efforts, a British Amateur Weightlifting Association (BAWLA)
-                    |                     was established in 1910. What was significant about BAWLA, aside from their fun acronym, was that
-                    |                     the group oversaw innumerable lifts. By 1933, the group held official competitions in over thirty
-                    |                     lifts (4). While BAWLA may have appeared solely concerned with Olympic weightlifting at first
-                    |                     glance, the reality, was that they promoted several versions of the powerlifts we use today. For
-                    |                     example, BAWLA held meets for one handed deadlifts, two handed deadlifts, rudimentary presses and
-                    |                     some leg work. Incidentally the judging process involved was often remarkably strict.
-                p
-                    strong
-                        | When Hermann Goerner toured England in the 1920s, he attempted to break the BAWLA deadlift
-                        | record with a 650lb deadlift.
-                    |  Successful in lifting the bar from the ground, Goerner&rsquo;s
-                    |                     lift was disqualified because he failed to pull the weight with his heels touching as per BAWLA&rsquo;s
-                    |                     rules (
-                    em this is called an &lsquo;English style deadlift
-                    | ). After the confusion was cleared, and a
-                    |                     visibly angered Goerner returned to the barbell &mdash; the strongman then completed the lift
-                    |                     satisfactorily for his BAWLA judges.
-                h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 Powerlifting Is Born
-                p
-                    | The 1950s proved a pivotal decade for powerlifters across the United States. Olympic Weightlifting,
-                    | despite the best efforts of Bob Hoffman and others, was waning in popularity. 
-                    strong
-                        | The AAU, which
-                        | oversaw Olympic Weightlifting, bodybuilding, and odd lift competitions, was coming under
-                        | increasing criticism and individuals were calling for a sea change in the iron game.
-                    |                     Bodybuilding promoters began organizing their own competitions in the United States, most notably
-                    |                     those organized by the Weider brothers. Based on the popularity of &lsquo;odd lift&rsquo; competitions and the
-                    |                     conviction that a narrow focus on weightlifting excluded a great deal of the lifting community,
-                    |                     individuals began to petition the AAU for a powerlifting meet.
-                blockquote(cite='https://barbend.com/powerlifting-history/')
+                            | Program creative in California cardio, 
+                            br
+                            | running cross-fit, boxing
+                .carousel-item.slide
+                    img.d-block.w-100(src='../assets/img/slider/sport-body-building-shtanga-myshcy-sport-1430245.jpg' alt='...')
+                    .carousel-caption.d-none.d-md-block.text-start
+                        h3.title.text-start Training like Rock
+                        p
+                            | Program creative in California cardio, 
+                            br
+                            | running cross-fit, boxing
+                .carousel-item.slide
+                    img.d-block.w-100(src='../assets/img/slider/vitamonk-advertorial-header.jpg' alt='...')
+                    .carousel-caption.d-none.d-md-block.text-start
+                        h3.title.text-start Training like Rock
+                        p
+                            | Program creative in California cardio, 
+                            br
+                            | running cross-fit, boxing
+            button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+            button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next
+    article.history.container-fluid
+        header.mb-5.mb-mg-0
+            h2.title.mb-3.mb-mg-0 The Fascinating Untold History Of Powerlifting
+            p.article-description
+                i
+                    | Learn more about the historic roots of powerlifting&apos;s explosive
+                    | growth.
+            footer.article-author
+                address
                     p
-                        | For most of the 1950s the AAU&rsquo;s response &mdash; as dictated by Bob Hoffman &mdash; was a resounding no.
-                h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 Powerlifting Continues to Grow
+                        | Written by 
+                        a(href='https://barbend.com/author/conor-heffernan/') Conor Heffernan
+                    p
+                        | Original text from 
+                        cite
+                            a(href='https://barbend.com/powerlifting-history/') barbend.com
+        section
+            h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 The First Competitions and Organizations
+            p
+                dfn Weightlifting
+                |  welcomed its first world championship in 1891. The sport&rsquo;s prestige was
+                |                     heightened some years later when it was featured at the inaugural 1896 Olympic Games in Athens (3).
+                |                     Powerlifting, on the other hand, had no such competition. 
+                strong
+                    | Indeed, powerlifting as we
+                    | understand it today, was virtually inseparable from weightlifting for the first half of the
+                    | twentieth-century.
+                |  This was especially the case with two of the largest weightlifting
+                |                     organizations which emerged during this period.
+            p
+                | While mainland Europe boasted a series of weightlifting organizations in the early twentieth century,
+                b
+                    | weightlifting, and by proxy powerlifting, tended to flourish in Great Britain and the United
+                    | States
+                | . After several failed efforts, a British Amateur Weightlifting Association (BAWLA)
+                |                     was established in 1910. What was significant about BAWLA, aside from their fun acronym, was that
+                |                     the group oversaw innumerable lifts. By 1933, the group held official competitions in over thirty
+                |                     lifts (4). While BAWLA may have appeared solely concerned with Olympic weightlifting at first
+                |                     glance, the reality, was that they promoted several versions of the powerlifts we use today. For
+                |                     example, BAWLA held meets for one handed deadlifts, two handed deadlifts, rudimentary presses and
+                |                     some leg work. Incidentally the judging process involved was often remarkably strict.
+            p
+                strong
+                    | When Hermann Goerner toured England in the 1920s, he attempted to break the BAWLA deadlift
+                    | record with a 650lb deadlift.
+                |  Successful in lifting the bar from the ground, Goerner&rsquo;s
+                |                     lift was disqualified because he failed to pull the weight with his heels touching as per BAWLA&rsquo;s
+                |                     rules (
+                em this is called an &lsquo;English style deadlift
+                | ). After the confusion was cleared, and a
+                |                     visibly angered Goerner returned to the barbell &mdash; the strongman then completed the lift
+                |                     satisfactorily for his BAWLA judges.
+            h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 Powerlifting Is Born
+            p
+                | The 1950s proved a pivotal decade for powerlifters across the United States. Olympic Weightlifting,
+                | despite the best efforts of Bob Hoffman and others, was waning in popularity. 
+                strong
+                    | The AAU, which
+                    | oversaw Olympic Weightlifting, bodybuilding, and odd lift competitions, was coming under
+                    | increasing criticism and individuals were calling for a sea change in the iron game.
+                |                     Bodybuilding promoters began organizing their own competitions in the United States, most notably
+                |                     those organized by the Weider brothers. Based on the popularity of &lsquo;odd lift&rsquo; competitions and the
+                |                     conviction that a narrow focus on weightlifting excluded a great deal of the lifting community,
+                |                     individuals began to petition the AAU for a powerlifting meet.
+            blockquote(cite='https://barbend.com/powerlifting-history/')
                 p
-                    | As American powerlifting grew in popularity, it was perhaps inevitable that international
-                    | competitions would begin to cross lifters&rsquo; minds. A British powerlifting federation was established
-                    | in the late 1960s, soon followed by other European nations. Interestingly, it was the French and
-                    | British who first came together for an international competition when lifters from both nations met
-                    | in 1968 and again in 1969 (16). Undoubtedly important, these competitions featured two rather
-                    | unusual rules.
-                p
-                    | These European competitions were important, but the nascent powerlifting world was itching for a real
-                    | test. They wanted to see Britain and America meet in competition. Thus in 1970, an inaugural
-                    | international meet between British and American lifters was held in Los Angeles. As retold by Mike
-                    | Shaw, one of the British lifters, the event was met with great interest, and even attracted local
-                    | television spots (18). In homage to the previously discussed Bob Hoffman, a rematch was held on his
-                    | birthday in 1971.
-                p
-                    | This meet then set the scene for a world-level powerlifting competition the following year in 1972.
-                    | With a world-level competition, an 
+                    | For most of the 1950s the AAU&rsquo;s response &mdash; as dictated by Bob Hoffman &mdash; was a resounding no.
+            h3.subtitle.mt-4.mb-4.mt-mg-0.mb-mg-0 Powerlifting Continues to Grow
+            p
+                | As American powerlifting grew in popularity, it was perhaps inevitable that international
+                | competitions would begin to cross lifters&rsquo; minds. A British powerlifting federation was established
+                | in the late 1960s, soon followed by other European nations. Interestingly, it was the French and
+                | British who first came together for an international competition when lifters from both nations met
+                | in 1968 and again in 1969 (16). Undoubtedly important, these competitions featured two rather
+                | unusual rules.
+            p
+                | These European competitions were important, but the nascent powerlifting world was itching for a real
+                | test. They wanted to see Britain and America meet in competition. Thus in 1970, an inaugural
+                | international meet between British and American lifters was held in Los Angeles. As retold by Mike
+                | Shaw, one of the British lifters, the event was met with great interest, and even attracted local
+                | television spots (18). In homage to the previously discussed Bob Hoffman, a rematch was held on his
+                | birthday in 1971.
+            p
+                | This meet then set the scene for a world-level powerlifting competition the following year in 1972.
+                | With a world-level competition, an 
+                dfn
+                    | International Powerlifting Federation
                     dfn
-                        | International Powerlifting Federation
-                        dfn
-                            | was established
-                            | that very same year in 1972. In a short time, the sport had come to full maturation (19).
-                            | Full maturation for male lifters that is. It took another six years before female
-                            | powerlifting became recognized as an official pursuit and sport.
-        article.last-win.container-fluid
-            header
-                h2.title Weightlifting Records
-            section.mens-records.mt-5.mb-mt-0
-                h3.subtitle British Men&rsquo;s Senior Records
-                .table-responsive
-                    table.table.table-striped.data-table.table-of-records
-                        tr
-                            th category (kg)
-                            th lift
-                            th record (kg)
-                            th holder
-                            th competition
-                            th location
-                        tr
-                            td 81
-                            td Snatch Clean &amp; Jerk
-                            td 322
-                            td Jack Oliver
-                            td European Senior Championships
-                            td Batumi, GEO
-            section.women-records.mt-5.mb-mt-0
-                h3.subtitle British Women&rsquo;s Senior Records
-                .table-responsive
-                    table.table.table-striped.data-table.table-of-records
-                        tr
-                            th category (kg)
-                            th lift
-                            th record (kg)
-                            th holder
-                            th competition
-                            th location
-                        tr
-                            td 64
-                            td Snatch Clean &amp; Jerk
-                            td 230
-                            td Sarah Davies
-                            td European Senior Championships
-                            td Moscow, RUS
-    footer.bottom-footer.container-fluid
-        p.copyright
-            small &copy; Copyright 2021 Wasya1212.
-    script(src='../libs/bootstrap-5.0.2-dist/js/bootstrap.min.js')
+                        | was established
+                        | that very same year in 1972. In a short time, the sport had come to full maturation (19).
+                        | Full maturation for male lifters that is. It took another six years before female
+                        | powerlifting became recognized as an official pursuit and sport.
+    article.last-win.container-fluid
+        header
+            h2.title Weightlifting Records
+        section.mens-records.mt-5.mb-mt-0
+            h3.subtitle British Men&rsquo;s Senior Records
+            .table-responsive
+                table.table.table-striped.data-table.table-of-records
+                    tr
+                        th category (kg)
+                        th lift
+                        th record (kg)
+                        th holder
+                        th competition
+                        th location
+                    tr
+                        td 81
+                        td Snatch Clean &amp; Jerk
+                        td 322
+                        td Jack Oliver
+                        td European Senior Championships
+                        td Batumi, GEO
+        section.women-records.mt-5.mb-mt-0
+            h3.subtitle British Women&rsquo;s Senior Records
+            .table-responsive
+                table.table.table-striped.data-table.table-of-records
+                    tr
+                        th category (kg)
+                        th lift
+                        th record (kg)
+                        th holder
+                        th competition
+                        th location
+                    tr
+                        td 64
+                        td Snatch Clean &amp; Jerk
+                        td 230
+                        td Sarah Davies
+                        td European Senior Championships
+                        td Moscow, RUS
