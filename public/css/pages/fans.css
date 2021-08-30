@@ -1,0 +1,72 @@
+/* FANS APPEALS */
+.fans-comments {
+    position: relative;
+}
+
+.appeals {
+    position: relative;
+    margin: 0 auto;
+    max-width: var(--control-element-size);
+}
+
+.appeals-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.appeals-list li {
+    border-bottom: 2px solid var(--background-color-light);
+    padding: var(--padding-normal);
+    margin-bottom: var(--margin-normal);
+}
+
+.appeals-list li p {
+    line-height: 1.4;
+    text-indent: 2ch;
+}
+
+.appeals-list li footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    cursor: default;
+    color: var(--text-color-darken-light);
+}
+
+.appeals-list .appeal-author {
+    user-select: none;
+}
+
+.appeals-list .appeal-date {
+    color: var(--active-text-color-light);
+}
+
+/* CREATE APPEAL FORM */
+.appeal-control {
+    position: relative;
+    width: 100%;
+    padding: var(--padding-normal);
+    box-sizing: border-box;
+}
+
+.appeal-control form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    grid-gap: var(--margin-normal);
+}
+
+.appeal-control textarea {
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    resize: none;
+    display: block;
+    padding: var(--padding-small);
+    box-sizing: border-box;
+}

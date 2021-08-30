@@ -1,0 +1,51 @@
+/* LOGO */
+:root {
+    --logo-standart-scale: 0.25;
+    --logo-original-width: 800px;
+    --logo-original-height: 250px;
+    --logo-original-image: url(../../assets/img/logo.svg);
+}
+
+/* DISTANCE BETWEEN BLOCKS */
+:root {
+    --padding-small: 10px;
+    --padding-normal: 16px;
+    --padding-large: 32px;
+    --margin-small: 16px;
+    --margin-normal: 32px;
+}
+
+/* FONTS */
+:root {
+    --main-font-family: sans-serif;
+    --title-font-family: 'Roboto', sans-serif;
+}
+
+/* TEXT SIZE */
+:root {
+    --text-size-title-small: 25px;
+    --text-size-title-regular: 35px;
+    --text-size-title-large: 45px;
+    --text-size-regular: 20px;
+}
+
+/* ELEMENT SIZE */
+:root {
+    --large-element-size: 1920px;
+    --medium-element-size: 1200px;
+    --small-element-size: 960px;
+    --control-element-size: var(--small-element-size);
+}
+
+/* COLORS */
+:root {
+    --background-color-dark: black;
+    --background-color-light: white;
+    --article-background-color-dark: #080808;
+    --text-color-light: white;
+    --text-color-dark: black;
+    --text-color-important: rgb(238, 90, 90);
+    --text-color-darken-light: rgb(231, 231, 231);
+    --active-text-color-light: rgb(204, 204, 204);
+    --strong-text-color-light: #9dbfea;
+}

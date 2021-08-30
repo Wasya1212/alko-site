@@ -1,0 +1,43 @@
+/* MATCHES CALLENDAR*/
+.matches-callendar {
+    position: relative;
+}
+
+.matches-callendar table {
+    margin: 0 auto;
+}
+
+.matches-callendar table td {
+    text-align: left;
+}
+
+.matches-callendar .title {
+    text-align: left;
+}
+
+/* NEXT MATCH */
+.next-match {
+    position: relative;
+}
+
+.next-match section {
+    text-align: center;
+}
+
+.next-match .next-match-date {
+    color: var(--text-color-important);
+    font-size: var(--text-size-title-large);
+}
+
+/* MATCHES RATINGS*/
+.raitings {
+    position: relative;
+}
+
+.raitings table {
+    margin: 0 auto;
+}
+
+.raitings .title {
+    text-align: left;
+}

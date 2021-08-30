@@ -1,0 +1,100 @@
+/* ADMIN */
+.admin {
+    position: relative;
+}
+
+.add-news-control {
+    position: relative;
+    max-width: var(--small-element-size);
+    margin: 0 auto;
+}
+
+/* ADD NEWS FORM */
+.add-news-control .news-image-upload-container {
+    margin-bottom: var(--margin-normal);
+}
+
+.add-news-control #news-image-input {
+    display: none;
+}
+
+.add-news-control .uploaded-image-container {
+    position: relative;
+    min-width: 350px;
+    min-height: 200px;
+    width: 100%;
+    background-image: url(../../assets/img/no-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.add-news-control .uploaded-image-container::before {
+	content: "";
+	float: left;
+	padding-top: 75%;
+    align-self: center;
+}
+
+.add-news-control .uploaded-image-container::after {
+    position: absolute;
+    left: 0;
+    bottom: var(--margin-normal);
+    content: "Click for choosing of image...";
+    color: var(--text-color-dark);
+    opacity: .25;
+    font-size: var(--text-size-title-large);
+    font-weight: bold;
+    font-family: var(--title-font-family);
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    visibility: hidden;
+}
+
+.add-news-control .uploaded-image-container:hover::after {
+    visibility: visible;
+}
+
+.add-news-control .news-image-upload-container,
+.add-news-control .news-info-upload-container {
+    display: grid;
+    grid-gap: var(--margin-normal);
+}
+
+.add-news-control .news-image-upload-container {
+    grid-template-columns: 1fr 220px;
+    align-items: flex-end;
+    justify-items: center;
+}
+
+.add-news-control .news-image-upload-container .upload-image-btn {
+    justify-self: stretch;
+    text-align: center;
+}
+
+#news-title-input {
+    grid-area: input;
+}
+
+#news-text-input {
+    grid-area: textarea;
+}
+
+#submit-new-news {
+    grid-area: button;
+    align-self: end;
+}
+
+.add-news-control .news-info-upload-container {
+    grid-template-areas: 
+            "input input button"
+            "textarea textarea button"
+            "textarea textarea button";
+    grid-template-rows: 50px 200px 50px;
+    grid-template-columns: 1fr 1fr 220px;
+}
+
+.add-news-control .news-info-upload-container textarea {
+    resize: none;
+}

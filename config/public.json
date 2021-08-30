@@ -1,0 +1,11 @@
+{
+    "staticFilesPath": "public",
+    "pagesPaths": {
+        "admin": "views/pages/admin.pug",
+        "contacts": "views/pages/contacts.pug",
+        "fans": "views/pages/fans.pug",
+        "home": "views/pages/home.pug",
+        "matches": "views/pages/matches.pug",
+        "news": "views/pages/news.pug"
+    }
+}

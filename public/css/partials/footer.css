@@ -1,0 +1,14 @@
+/* FOOTER */
+.bottom-footer {
+    position: relative;
+    background-color: var(--background-color-dark);
+    color: var(--text-color-light);
+    padding: var(--padding-normal);
+    text-align: center;
+}
+
+/* COPYRIGHT */
+.bottom-footer .copyright {
+    cursor: default;
+    user-select: none;
+}

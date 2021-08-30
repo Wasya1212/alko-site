@@ -1,0 +1,55 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='author' content='Ukrainets Vasya')
+    meta(name='description' content='Simple website page of WebUI Task #1')
+    meta(http-equiv='content-language' content='en')
+    meta(http-equiv='cache-control' content='no-cache')
+    title Web Task 1 | Admin
+    link(type='image/x-icon' rel='shortcut icon' href='../../assets/icons/favicon.ico')
+    link(rel='stylesheet' href='../../css/index.css')
+body
+    header.top-header
+        .logo
+            a(href='../index.html')
+        nav.top-navigation
+            ul.categories-list
+                li.category-item
+                    a(href='../index.html') main
+                li.category-item
+                    span.subcategory-item
+                        a(href='matches.html') matches
+                    ul.categories-list.subcategories-list
+                        li.category-item.subcategory-item
+                            a(href='matches.html#matches-callendar-container') callendar of matches
+                        li.category-item.subcategory-item
+                            a(href='matches.html#next-match-container') next game
+                        li.category-item.subcategory-item
+                            a(href='matches.html#raitings-container') raitings
+                li.category-item
+                    a(href='news.html') news
+                li.category-item
+                    a(href='fans.html') fans
+                li.category-item
+                    a(href='contacts.html') contacts
+                li.category-item.current
+                    a(href='') admin
+    main.content
+        article.admin
+            header
+                h2.title Add news
+            .add-news-control
+                form
+                    .news-image-upload-container
+                        label.uploaded-image-container(for='news-image-input')
+                        label.upload-image-btn.button(for='news-image-input') Add image
+                        input#news-image-input(type='file' name='news-image')
+                    .news-info-upload-container
+                        input#news-title-input(name='news-title' type='text' placeholder='News title')
+                        textarea#news-text-input(name='news-text' placeholder='News text')
+                        button#submit-new-news.button Add news
+    footer.bottom-footer
+        p.copyright
+            small &copy; Copyright 2021 Wasya1212.

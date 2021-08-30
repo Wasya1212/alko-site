@@ -1,0 +1,75 @@
+/* INTRO */
+.intro {
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-family: var(--title-font-family);
+    letter-spacing: 2px;
+    font-size: var(--text-size-title-regular);
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.intro .title {
+    margin-bottom: var(--margin-normal);
+}
+
+/* HISTORY */
+.history {
+    position: relative;
+}
+
+.history>header {
+    position: relative;
+}
+
+.history .title {
+    text-decoration: underline;
+}
+
+.history .article-description {
+    font-size: var(--text-size-title-small);
+    font-style: italic;
+    text-align: center;
+    opacity: .9;
+}
+
+.history .article-author {
+    position: relative;
+    text-align: right;
+}
+
+.history .article-author a {
+    color: var(--text-color-darken-light);
+}
+
+.history .article-author a:hover {
+    color: var(--active-text-color-light)
+}
+
+.history>section p {
+    color: var(--text-color-darken-light);
+    text-indent: 2ch;
+    line-height: 1.5;
+    font-size: var(--text-size-regular);
+}
+
+.history>section blockquote p {
+    font-style: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.history>section blockquote p::before,
+.history>section blockquote p::after {
+    content: '\"';
+}
+
+/* LAST WIN */
+.last-win .table-of-records {
+    margin: 0 auto;
+}
+
+.last-win .table-of-records tr th {
+    color: var(--text-color-light);
+}

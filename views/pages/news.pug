@@ -1,0 +1,98 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='author' content='Ukrainets Vasya')
+    meta(name='description' content='Simple website page of WebUI Task #1')
+    meta(http-equiv='content-language' content='en')
+    meta(http-equiv='cache-control' content='no-cache')
+    title Web Task 1 | News
+    link(type='image/x-icon' rel='shortcut icon' href='../../assets/icons/favicon.ico')
+    link(rel='stylesheet' href='../../css/index.css')
+body
+    header.top-header
+        .logo
+            a(href='../index.html')
+        nav.top-navigation
+            ul.categories-list
+                li.category-item
+                    a(href='../index.html') main
+                li.category-item
+                    span.subcategory-item
+                        a(href='matches.html') matches
+                    ul.categories-list.subcategories-list
+                        li.category-item.subcategory-item
+                            a(href='matches.html#matches-callendar-container') callendar of matches
+                        li.category-item.subcategory-item
+                            a(href='matches.html#next-match-container') next game
+                        li.category-item.subcategory-item
+                            a(href='matches.html#raitings-container') raitings
+                li.category-item.current
+                    a(href='') news
+                li.category-item
+                    a(href='fans.html') fans
+                li.category-item
+                    a(href='contacts.html') contacts
+                li.category-item
+                    a(href='admin.html') admin
+    main.content
+        article.news
+            header
+                h2.title Latest news
+            .news-list
+                section.news-preview.news-preview-small
+                    picture
+                        a(href='#')
+                            img(src='../../assets/img/news/2211407-46128370-2560-1440.webp' alt='powerlifter image')
+                    .content
+                        header
+                            a(href='#')
+                                h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
+                        footer
+                            p
+                                span.news-views 287
+                            p
+                                time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
+                section.news-preview.news-preview-small
+                    picture
+                        a(href='#')
+                            img(src='../../assets/img/news/2894021-59588428-2560-1440.webp' alt='powerlifter image')
+                    .content
+                        header
+                            a(href='#')
+                                h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
+                        footer
+                            p
+                                span.news-views 965
+                            p
+                                time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
+                section.news-preview.news-preview-small
+                    picture
+                        a(href='#')
+                            img(src='../../assets/img/news/2938298-60321928-2560-1440.webp' alt='powerlifter image')
+                    .content
+                        header
+                            a(href='#')
+                                h4 UKRAINIAN ALEXEY NOVIKOV WON THE TITLE OF THE MOST STRONG PERSON OF THE PLANET
+                        footer
+                            p
+                                span.news-views 512
+                            p
+                                time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
+                section.news-preview.news-preview-small
+                    picture
+                        a(href='#')
+                            img(src='../../assets/img/news/2286853-47635850-2560-1440.webp' alt='powerlifter image')
+                    .content
+                        header
+                            a(href='#')
+                                h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
+                        footer
+                            p
+                                span.news-views 302
+                            p
+                                time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
+    footer.bottom-footer
+        p.copyright
+            small &copy; Copyright 2021 Wasya1212.

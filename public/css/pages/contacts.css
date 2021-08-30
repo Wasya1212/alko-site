@@ -1,0 +1,75 @@
+/* CONTACTS */
+.contacts {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--margin-normal);
+}
+
+.contacts>header {
+    visibility: hidden;
+    height: 0;
+    display: none;
+}
+
+.contacts>section {
+    position: relative;
+    background-color: var(--article-background-color-dark);
+    box-sizing: border-box;
+    padding: var(--padding-large);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts>section header {
+    text-align: center;
+}
+
+.contacts>section address {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.contacts>section address p {
+    margin: 0 0 var(--margin-normal) 0;
+}
+
+.contacts>section address a {
+    font-weight: initial;
+    color: var(--active-text-color-light);
+    transition: color .25s ease-in-out;
+}
+
+.contacts>section address a:hover {
+    color: var(--strong-text-color-light);
+}
+
+/* SOCIALS */
+.contacts>section .socials {
+    align-self: center;
+}
+
+.contacts>section .socials a {
+    margin-right: var(--margin-small);
+    transition: color .25s ease-in-out;
+}
+
+.contacts>section .socials a:last-child {
+    margin-right: 0;
+}
+
+.contacts>section .socials a:hover {
+    color: var(--text-color-important);
+}
+
+.contacts>section .socials p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* MAP */
+.contacts .map iframe {
+    width: 100%;
+    min-height: 70vh;
+}

@@ -1,0 +1,26 @@
+/* SOCIALS CONTAINER */
+.socials-navbar {
+    position: relative;
+    color: inherit;
+    font-size: inherit;
+}
+
+.socials-navbar a {
+    text-decoration: none;
+}
+
+.socials-navbar .twitter::before {
+    font-family: "Font Awesome 5 Brands"; content: "\f099";
+}
+
+.socials-navbar .facebook::before {
+    font-family: "Font Awesome 5 Brands"; content: "\f39e";
+}
+
+.socials-navbar .instagram::before {
+    font-family: "Font Awesome 5 Brands"; content: "\f16d";
+}
+
+.socials-navbar .youtube::before {
+    font-family: "Font Awesome 5 Brands"; content: "\f167";
+}

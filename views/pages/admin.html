@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ukrainets Vasya">
+    <meta name="description" content="Simple website page of WebUI Task #1">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>Web Task 1 | Admin</title>
+    <link type="image/x-icon" rel="shortcut icon" href="../../assets/icons/favicon.ico">
+    <link rel="stylesheet" href="../../css/index.css">
+</head>
+<body>
+    
+    <header class="top-header">
+        <div class="logo"><a href="../index.html"></a></div>
+        <nav class="top-navigation">
+            <ul class="categories-list">
+                <li class="category-item"><a href="../index.html">main</a></li>
+                <li class="category-item">
+                    <span class="subcategory-item"><a href="matches.html">matches</a></span>
+                    <ul class="categories-list subcategories-list">
+                        <li class="category-item subcategory-item">
+                            <a href="matches.html#matches-callendar-container">callendar of matches</a>
+                        </li>
+                        <li class="category-item subcategory-item">
+                            <a href="matches.html#next-match-container">next game</a>
+                        </li>
+                        <li class="category-item subcategory-item">
+                            <a href="matches.html#raitings-container">raitings</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="category-item"><a href="news.html">news</a></li>
+                <li class="category-item"><a href="fans.html">fans</a></li>
+                <li class="category-item"><a href="contacts.html">contacts</a></li>
+                <li class="category-item current"><a href="">admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+
+        <article class="admin">
+            
+            <header>
+                <h2 class="title">Add news</h2>
+            </header>
+            
+            <div class="add-news-control">
+                <form>
+                    <div class="news-image-upload-container">
+                        <label class="uploaded-image-container" for="news-image-input"></label>
+                        <label class="upload-image-btn button" for="news-image-input">Add image</label>
+                        <input type="file" id="news-image-input" name="news-image">
+                    </div>
+                    <div class="news-info-upload-container">
+                        <input name="news-title" id="news-title-input" type="text" placeholder="News title">
+                        <textarea name="news-text" id="news-text-input" placeholder="News text"></textarea>
+                        <button class="button" id="submit-new-news">Add news</button>
+                    </div>
+                </form>
+            </div>
+        
+        </article>
+
+    </main>
+    
+    <footer class="bottom-footer">
+        <p class="copyright"><small>&copy; Copyright 2021 Wasya1212.</small></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='author' content='Ukrainets Vasya')
+    meta(name='description' content='Simple website page of WebUI Task #1')
+    meta(http-equiv='content-language' content='en')
+    meta(http-equiv='cache-control' content='no-cache')
+    title Web Task 1 | Mathces
+    link(type='image/x-icon' rel='shortcut icon' href='../../assets/icons/favicon.ico')
+    link(rel='stylesheet' href='../../css/index.css')
+body
+    header.top-header
+        .logo
+            a(href='../index.html')
+        nav.top-navigation
+            ul.categories-list
+                li.category-item
+                    a(href='../index.html') main
+                li.category-item
+                    span.subcategory-item.current
+                        a(href='') matches
+                    ul.categories-list.subcategories-list
+                        li.category-item.subcategory-item
+                            a(href='#matches-callendar-container') callendar of matches
+                        li.category-item.subcategory-item
+                            a(href='#next-match-container') next game
+                        li.category-item.subcategory-item
+                            a(href='#raitings-container') raitings
+                li.category-item
+                    a(href='news.html') news
+                li.category-item
+                    a(href='fans.html') fans
+                li.category-item
+                    a(href='contacts.html') contacts
+                li.category-item
+                    a(href='admin.html') admin
+    main.content
+        article#matches-callendar-container.matches-callendar
+            header
+                h2.title 2021 British Powerlifting Championships
+            section
+                table.data-table
+                    tr
+                        th date
+                        th name
+                        th grp
+                        th teams
+                    tr
+                        td 27/06/21
+                        td British Equipped Bench Championships
+                        td 1 - 1530
+                        td SE, NM, SCO, WAL, GL, YNE
+                    tr
+                        td 27/06/21
+                        td British Equipped Bench Championships
+                        td 1 - 1530
+                        td SE, NM, SCO, WAL, GL, YNE
+                    tr
+                        td 26/06/21
+                        td British Equipped Championships
+                        td 1 - 0930
+                        td SE, SCO, NM, WM, EM, YNE
+                    tr
+                        td 26/06/21
+                        td British Equipped Championships
+                        td 2 - 1230
+                        td SE, SCO, WAL, WM, EM
+                    tr
+                        td 26/06/21
+                        td British Equipped Championships
+                        td 3 - 1530
+                        td SE, SCO, WAL, WM, EM
+                    tr
+                        td 27/06/21
+                        td British Equipped Championships
+                        td 1 - 0930
+                        td EM, NM, GL, YNE, SE
+                    tr
+                        td 27/06/21
+                        td British Equipped Championships
+                        td 2 - 1230
+                        td WAL, NW, SM, WM
+        article#next-match-container.next-match
+            header
+                h2.title Next game
+            section
+                p
+                    time.next-match-date(datetime='2021-07-15') 2021-07-15
+        article#raitings-container.raitings
+            header
+                h2.title Raitings
+            section
+                table.data-table
+                    tr
+                        th record (kg)
+                        th holder
+                        th competition
+                    tr
+                        td 322
+                        td Jack Oliver
+                        td European Senior Championships
+                    tr
+                        td 216
+                        td Zoe Smith
+                        td World Senior Championships
+                    tr
+                        td 230
+                        td Sarah Davies
+                        td European Senior Championships
+                    tr
+                        td 286
+                        td Gareth Evans
+                        td British International Open
+                    tr
+                        td 131
+                        td Jaswant Shergill
+                        td England Senior Championships
+    footer.bottom-footer
+        p.copyright
+            small &copy; Copyright 2021 Wasya1212.
