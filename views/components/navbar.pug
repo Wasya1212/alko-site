@@ -1,10 +1,18 @@
 #navbarsExample05.top-navigation.navbar-collapse.collapse
     ul.categories-list.d-flex.flex-column.flex-md-row.navbar-nav.me-auto
-        li.category-item.current
-            a(href='/') main
+        if(pageName && pageName === 'main')
+            li.category-item.current
+                a(href='/') main
+        else
+            li.category-item
+                a(href='/') main
         li.category-item.dropdown
-            span.subcategory-item
-                a(href='/matches') matches
+            if(pageName && pageName === 'matches')
+                span.subcategory-item.current
+                    a(href='/matches') matches
+            else
+                span.subcategory-item
+                    a(href='/matches') matches
             ul.categories-list.subcategories-list
                 li.category-item.subcategory-item
                     a(href='/matches#matches-callendar-container')
@@ -14,11 +22,27 @@
                     a(href='/matches#next-match-container') next game
                 li.category-item.subcategory-item
                     a(href='/matches#raitings-container') raitings
-        li.category-item
-            a(href='/news') news
-        li.category-item
-            a(href='/fans') fans
-        li.category-item
-            a(href='/contacts') contacts
-        li.category-item
-            a(href='/admin') admin
+        if(pageName && pageName === 'news')
+            li.category-item.current
+                a(href='/news') news
+        else
+            li.category-item
+                a(href='/news') news
+        if(pageName && pageName === 'fans')
+            li.category-item.current
+                a(href='/fans') fans
+        else
+            li.category-item
+                a(href='/fans') fans
+        if(pageName && pageName === 'contacts')
+            li.category-item.current
+                a(href='/contacts') contacts
+        else
+            li.category-item
+                a(href='/contacts') contacts
+        if(pageName && pageName === 'admin')
+            li.category-item.current
+                a(href='/admin') admin
+        else
+            li.category-item
+                a(href='/admin') admin

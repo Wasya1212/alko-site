@@ -16,7 +16,7 @@ const router = new Router();
 const CONTACTS_PAGE = fs.readFileSync(path.resolve(__dirname, `../${contactsPagePath}`));
 
 router.get('/contacts', (ctx) => {
-  ctx.body = renderPage(CONTACTS_PAGE);
+  ctx.body = renderPage(CONTACTS_PAGE, { pageName: 'contacts' });
 });
 
 module.exports = router;

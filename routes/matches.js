@@ -16,7 +16,7 @@ const router = new Router();
 const MATCHES_PAGE = fs.readFileSync(path.resolve(__dirname, `../${matchesPagePath}`));
 
 router.get('/matches', (ctx) => {
-  ctx.body = renderPage(MATCHES_PAGE);
+  ctx.body = renderPage(MATCHES_PAGE, { pageName: 'matches' });
 });
 
 module.exports = router;

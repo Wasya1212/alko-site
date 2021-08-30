@@ -16,7 +16,7 @@ const router = new Router();
 const NEWS_PAGE = fs.readFileSync(path.resolve(__dirname, `../${newsPagePath}`));
 
 router.get('/news', (ctx) => {
-  ctx.body = renderPage(NEWS_PAGE);
+  ctx.body = renderPage(NEWS_PAGE, { pageName: 'news' });
 });
 
 module.exports = router;

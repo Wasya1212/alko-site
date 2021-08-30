@@ -16,7 +16,7 @@ const router = new Router();
 const ADMIN_PAGE = fs.readFileSync(path.resolve(__dirname, `../${adminPagePath}`));
 
 router.get('/admin', (ctx) => {
-  ctx.body = renderPage(ADMIN_PAGE);
+  ctx.body = renderPage(ADMIN_PAGE, { pageName: 'admin' });
 });
 
 module.exports = router;
