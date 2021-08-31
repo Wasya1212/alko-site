@@ -32,3 +32,15 @@ function formatDateAndTime(date, time = false) {
 
   return `${day} Of ${month}, ${year}` + (time ? ` At ${hour}:${minutes}` : '');
 }
+
+function readPhotoURL(input, onload) {
+  if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      
+      reader.onload = e => {
+          onload(e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+  }
+}

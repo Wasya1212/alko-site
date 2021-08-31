@@ -14,7 +14,7 @@ block content
         header
             h2.title Add news
         .add-news-control
-            form
+            form.add-news-form
                 .news-image-upload-container
                     label.uploaded-image-container(for='news-image-input')
                     label.upload-image-btn.button(for='news-image-input') Add image
@@ -23,3 +23,6 @@ block content
                     input#news-title-input(name='news-title' type='text' placeholder='News title')
                     textarea#news-text-input(name='news-text' placeholder='News text')
                     button#submit-new-news.button Add news
+
+block scripts
+    script(src="../js/admin.js")
