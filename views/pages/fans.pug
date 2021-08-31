@@ -28,8 +28,11 @@ block content
                         time.appeal-date(datetime='2021-07-14T20:33') 14th Of July, 2021 At 20:17
                         strong.appeal-author Brian Oliver
             .appeal-control
-                form
+                form.add-feedback-form
                     div
                         textarea(placeholder='Write message...' name='appeal-text')
                     div
                         button.button Send
+
+block scripts
+    script(src="../js/fans.js")
