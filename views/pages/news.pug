@@ -9,60 +9,25 @@ block vars
             description: 'Simple website page of WebUI Task #1'
         }
 
+mixin news(news)
+    section.news-preview.news-preview-small
+        picture
+            a(href='#')
+                img(src= "../../assets/img/news/" + news.image alt=news.title + ' image')
+        .content
+            header
+                a(href='#')
+                    h4= news.title
+            footer
+                p
+                    span.news-views= news.views
+                p
+                    time.news-date(datetime=news.date)=formatDateAndTime(news.date)
+
 block content
     article.news
         header
             h2.title Latest news
         .news-list
-            section.news-preview.news-preview-small
-                picture
-                    a(href='#')
-                        img(src='../../assets/img/news/2211407-46128370-2560-1440.webp' alt='powerlifter image')
-                .content
-                    header
-                        a(href='#')
-                            h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
-                    footer
-                        p
-                            span.news-views 287
-                        p
-                            time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
-            section.news-preview.news-preview-small
-                picture
-                    a(href='#')
-                        img(src='../../assets/img/news/2894021-59588428-2560-1440.webp' alt='powerlifter image')
-                .content
-                    header
-                        a(href='#')
-                            h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
-                    footer
-                        p
-                            span.news-views 965
-                        p
-                            time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
-            section.news-preview.news-preview-small
-                picture
-                    a(href='#')
-                        img(src='../../assets/img/news/2938298-60321928-2560-1440.webp' alt='powerlifter image')
-                .content
-                    header
-                        a(href='#')
-                            h4 UKRAINIAN ALEXEY NOVIKOV WON THE TITLE OF THE MOST STRONG PERSON OF THE PLANET
-                    footer
-                        p
-                            span.news-views 512
-                        p
-                            time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
-            section.news-preview.news-preview-small
-                picture
-                    a(href='#')
-                        img(src='../../assets/img/news/2286853-47635850-2560-1440.webp' alt='powerlifter image')
-                .content
-                    header
-                        a(href='#')
-                            h4 STRONGMAN EDDIE HALL WITH A 7000 CALORIES DIET DROUGHT 38 KILO IN A TWO MONTHS
-                    footer
-                        p
-                            span.news-views 302
-                        p
-                            time.news-date(datetime='2021-07-14T14:01') 14th of July, 2021
+            each newsItem in news
+                +news(newsItem)

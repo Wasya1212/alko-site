@@ -4,12 +4,9 @@ const newsImagePreviewElement = document.querySelector('.uploaded-image-containe
 const newsTitleInputElement = document.querySelector('#news-title-input');
 const newsTextTextareaElement = document.querySelector('#news-text-input');
 
-function submitNews(news, { success, error }) {
+async function submitNews(news, { success, error }) {
+  await postData('/news/create', news);
   success();
-}
-
-function createNews(news) {
-  return ;
 }
 
 function showUploadedPicture(imagePath) {
@@ -24,18 +21,18 @@ newsImageInputElement.addEventListener('change', () => {
 
 newsFormElement.addEventListener('submit', e => {
   e.preventDefault();
-  
-  const newsData = {
-    title: newsTitleInputElement.value,
-    text: newsTextTextareaElement.value,
-    image: newsImageInputElement.files[0],
-    date: formatDateAndTime(new Date(), false),
-    views: Math.floor(Math.random() * 1000)
-  };
 
-  for (const newsField in newsData) {
-    if (!newsData[newsField]) {
-      alert(`Please enter news ${newsField}!`);
+  const newsData = new FormData();
+
+  newsData.append('image', newsImageInputElement.files[0]);
+  newsData.append('title', newsTitleInputElement.value);
+  newsData.append('text', newsTextTextareaElement.value);
+  newsData.append('date', new Date());
+  newsData.append('views', Math.floor(Math.random() * 1000));
+
+  for (const newsFieldPair of newsData.entries()) {
+    if (!newsFieldPair[1] || newsFieldPair[1] === "undefined") {
+      alert(`Please enter news ${newsFieldPair[0]}!`);
       return;
     }
   }  

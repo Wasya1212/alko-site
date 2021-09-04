@@ -9,24 +9,21 @@ block vars
             description: 'Simple website page of WebUI Task #1'
         }
 
+mixin feedback(feedback)
+    li
+        p.appeal-text= feedback.text
+        footer
+            time.appeal-date(datetime=feedback.date)=formatDateAndTime(feedback.date, true)
+            strong.appeal-author= feedback.author
+
 block content
     article.fans-comments
         header
             h2.title fan appeals
         .appeals
             ul.appeals-list
-                li
-                    p.appeal-text
-                        | The anti-doping division of CAS did not accept that the steroids came from meat contamination and four-year suspensions for the three were announced today by the International Testing Agency (ITA). At the same time the ITA, which carries out all anti-doping procedures for the International Weightlifting Federation (IWF) took the next step towards a possible outright ban for Colombia. Because it has had three positives during the Olympic qualifying period, and three during a year, the Colombian Weightlifting Federation has been referred to the IWF&rsquo;s independent Member Federations Sanctions Panel.
-                    footer
-                        time.appeal-date(datetime='2021-07-14T20:33') 14th Of July, 2021 At 12:33
-                        strong.appeal-author William Pena
-                li
-                    p.appeal-text
-                        | We want the wellbeing of our sport but we ask that our work is valued. We have weightlifting all over our country, we take children from drug-trafficking and crime groups and we link them to weightlifting. It is impossible to know what athletes are eating or consuming in a country where there are thousands of weightlifters.
-                    footer
-                        time.appeal-date(datetime='2021-07-14T20:33') 14th Of July, 2021 At 20:17
-                        strong.appeal-author Brian Oliver
+                each feedback in feedbacks
+                    +feedback(feedback)
             .appeal-control
                 form.add-feedback-form
                     div

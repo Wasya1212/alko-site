@@ -44,3 +44,20 @@ function readPhotoURL(input, onload) {
       reader.readAsDataURL(input.files[0]);
   }
 }
+
+async function postData(url = '', data = {}) {
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    headers: data instanceof FormData
+      ? {}
+      : { 'Content-Type': 'application/json' },
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: data instanceof FormData ? data : JSON.stringify(data)
+  });
+  
+  return await response.json();
+}
