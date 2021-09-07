@@ -7,12 +7,25 @@ async function submitFeedback(feedback, { success, error }) {
   success();
 }
 
+function storeFeedback(feedbackData) {
+  const feedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
+  localStorage.setItem("feedbacks", JSON.stringify([...feedbacks, feedbackData]));
+}
+
+function getFeedbacksFromStorage() {
+  return JSON.parse(localStorage.getItem("feedbacks") || "[]");
+}
+
+function clearFeedbacksStorage() {
+  localStorage.setItem("feedbacks", JSON.stringify([]));
+}
+
 function createFeedbackElement(feedback) {
   return `
     <li>
       <p class="appeal-text">${feedback.text}</p>
       <footer>
-        <time class="appeal-date" datetime="${formatDateAndTime(feedback.date, true)}">${formatDateAndTime(feedback.date, true)}</time>
+        <time class="appeal-date" datetime="${formatDateAndTime(new Date(feedback.date), true)}">${formatDateAndTime(new Date(feedback.date), true)}</time>
         <strong class="appeal-author">${feedback.author}</strong>
       </footer>
     </li>
@@ -33,11 +46,35 @@ feedbackFormElement.addEventListener('submit', e => {
     return;
   }  
 
-  submitFeedback(feedbackData, {
-    success: () => {
-      feedbacksList.innerHTML += createFeedbackElement(feedbackData);
-      feedbackTextareaElement.value = "";
-    },
-    error: () => alert("Cannot create feedback! Please try again...")
-  });  
+  if (isOnline()) {
+    submitFeedback(feedbackData, {
+      success: () => {
+        feedbacksList.innerHTML += createFeedbackElement(feedbackData);
+        feedbackTextareaElement.value = "";
+      },
+      error: () => alert("Cannot create feedback! Please try again...")
+    });
+  } else {
+    storeFeedback(feedbackData);
+    feedbacksList.innerHTML += createFeedbackElement(feedbackData);
+    feedbackTextareaElement.value = "";
+  }
+});
+
+const feedbacksFromStorage = getFeedbacksFromStorage();
+
+document.addEventListener("DOMContentLoaded", e => {
+  if (!feedbacksFromStorage || isOnline()) return;
+
+  feedbacksFromStorage.forEach(feedback => {
+    feedbacksList.innerHTML += createFeedbackElement(feedback);
+    feedbackTextareaElement.value = "";
+  });
+});
+
+window.addEventListener('online', () => {
+  feedbacksFromStorage.forEach(feedback => {
+    postData('/fans/feedback/create', feedback);
+  });
+  clearFeedbacksStorage();
 });

@@ -4,6 +4,21 @@ const newsImagePreviewElement = document.querySelector('.uploaded-image-containe
 const newsTitleInputElement = document.querySelector('#news-title-input');
 const newsTextTextareaElement = document.querySelector('#news-text-input');
 
+function storeNews(newNewsData) {
+  const news = JSON.parse(localStorage.getItem("news") || "[]");
+  const newNews = {};
+
+  for (const newsFieldPair of newNewsData.entries()) {
+    newNews[newsFieldPair[0]] = newsFieldPair[1];
+  }
+
+  newNews.imageBlob = URL.createObjectURL(newNews.image);
+  newNews.imageName = newNews.image.name;
+  delete newNews.image;
+
+  localStorage.setItem("news", JSON.stringify([...news, newNews]));
+}
+
 async function submitNews(news, { success, error }) {
   await postData('/news/create', news);
   success();
@@ -37,13 +52,17 @@ newsFormElement.addEventListener('submit', e => {
     }
   }  
 
-  submitNews(newsData, {
-    success: () => {
-      newsImagePreviewElement.style.backgroundImage = 'url(../../assets/img/no-image.jpg)';
-      newsImageInputElement.value = "";
-      newsTitleInputElement.value = "";
-      newsTextTextareaElement.value = "";
-    },
-    error: () => alert("Cannot create news! Please try again...")
-  });  
+  if (isOnline()) {
+    submitNews(newsData, {
+      success: () => {
+        newsImagePreviewElement.style.backgroundImage = 'url(../../assets/img/no-image.jpg)';
+        newsImageInputElement.value = "";
+        newsTitleInputElement.value = "";
+        newsTextTextareaElement.value = "";
+      },
+      error: () => alert("Cannot create news! Please try again...")
+    });
+  } else {
+    storeNews(newsData);
+  }
 });

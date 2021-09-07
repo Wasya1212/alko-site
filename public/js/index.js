@@ -1,3 +1,7 @@
+function isOnline() {
+  return window.navigator.onLine;
+}
+
 function formatDay(day) {
   return day === 3
     ? `${day}rd`
