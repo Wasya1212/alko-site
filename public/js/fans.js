@@ -56,7 +56,6 @@ feedbackFormElement.addEventListener('submit', e => {
     });
   } else {
     storeFeedback(feedbackData);
-    feedbacksList.innerHTML += createFeedbackElement(feedbackData);
     feedbackTextareaElement.value = "";
   }
 });
@@ -73,8 +72,13 @@ document.addEventListener("DOMContentLoaded", e => {
 });
 
 window.addEventListener('online', () => {
-  feedbacksFromStorage.forEach(feedback => {
-    postData('/fans/feedback/create', feedback);
+  getFeedbacksFromStorage().forEach(feedback => {
+    postData('/fans/feedback/create', feedback)
+      .then(() => {
+        feedbacksList.innerHTML += createFeedbackElement(feedback)
+      });
   });
-  clearFeedbacksStorage();
+  setTimeout(() => {
+    clearFeedbacksStorage();
+  }, 2000);
 });

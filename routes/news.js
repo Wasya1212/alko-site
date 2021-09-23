@@ -30,7 +30,9 @@ router.post('/news/create', async (ctx, next) => {
   
   const newsData = Object.assign(
     { ...ctx.request.body },
-    { image: ctx.request.files.image.path.match(/[^\\]+(?=\.).+/)[0] }
+    ctx.request.files && {
+      image: ctx.request.files.image.path.match(/[^\\]+(?=\.).+/)[0]
+    }
   );
   const newNews = await newsController.createNews(newsData);
   

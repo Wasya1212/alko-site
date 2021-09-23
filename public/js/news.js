@@ -27,14 +27,8 @@ function createNewsElement(news) {
   `;
 }
 
-const newsContainerElement = document.querySelector('.news-list');
-
-const newsFromStorage = getNewsFromStorage();
-
-document.addEventListener('DOMContentLoaded', e => {
-  if (!newsFromStorage || isOnline()) return;
-
-  newsFromStorage.forEach(news => {
+function setNews(news) {
+  (news || getNewsFromStorage()).forEach(news => {
     newsContainerElement.innerHTML += createNewsElement(news);
     const createdNews = newsContainerElement.querySelectorAll('.news-preview');
 
@@ -42,11 +36,24 @@ document.addEventListener('DOMContentLoaded', e => {
       createdNews[createdNews.length - 1].querySelector('img').setAttribute('src', imagePath);
     });
   });
+}
+
+const newsContainerElement = document.querySelector('.news-list');
+
+const newsFromStorage = getNewsFromStorage();
+
+document.addEventListener('DOMContentLoaded', e => {
+  if (!newsFromStorage || isOnline()) return;
+  setNews(newsFromStorage);  
 });
 
 window.addEventListener('online', () => {
-  newsFromStorage.forEach(news => {
+  console.log('das', getNewsFromStorage())
+  getNewsFromStorage().forEach(news => {
+    delete news.image;
     postData('/news/create', news);
   });
-  clearNewsStorage();
+  setTimeout(() => {
+    clearNewsStorage();
+  }, 2000);
 });
